@@ -174,4 +174,16 @@ RETURN
     AND Hangsx.tenhang = @CongTySanXuat
 );
 
+--Câu 10
+CREATE FUNCTION choseSanphambyHang
+()
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT Sanpham.*, Hangsx.tenhang
+    FROM Sanpham
+    INNER JOIN Hangsx ON Sanpham.mahangsx = Hangsx.mahangsx
+);
+
 
